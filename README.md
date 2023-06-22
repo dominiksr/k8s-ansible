@@ -1,5 +1,10 @@
 # k8s-ansible
-## Ubuntu 22.04 + k8s v1.27.2
+## Ubuntu 22.04 + k8s(containerd) v1.27.2 + calico v3.26.1
+### configuration:
+
+ansible user with sudo privileges = ubuntu
+
+cluster cidr = 10.10.0.0/16
 
 1. Create "hosts" file.
 ```
@@ -36,6 +41,17 @@ ansible-playbook --ask-become-pass -i hosts master.yml #type ansible host passwo
 ansible-playbook -i hosts join-workers.yml
 ```
 
+# TODO
+- k alias
+- kubectl autocompletion
+
 
 links:
-https://buildvirtual.net/deploy-a-kubernetes-cluster-using-ansible/
+
+https://buildvirtual.net/deploy-a-kubernetes-cluster-using-ansible
+
+https://docs.tigera.io/calico/latest/getting-started/kubernetes/self-managed-onprem/onpremises#install-calico
+
+https://raw.githubusercontent.com/projectcalico/calico/v3.26.1/manifests/tigera-operator.yaml
+
+https://raw.githubusercontent.com/projectcalico/calico/v3.26.1/manifests/custom-resources.yaml
