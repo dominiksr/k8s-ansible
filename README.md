@@ -16,9 +16,9 @@ worker2 ansible_host=172.31.118.25 ansible_user=ubuntu
 ansible -i hosts all -m ping
 ```
 
-3. Copy keys and use sudo without needing a password.
+3. Copy keys and use sudo without needing a password. 
 ```
-ansible-playbook --ask-become-pass -i hosts users.yml
+ansible-playbook --ask-become-pass -i hosts users.yml #type master/worker password
 ```
 
 4. Install Kubernetes
@@ -26,9 +26,9 @@ ansible-playbook --ask-become-pass -i hosts users.yml
 ansible-playbook -i hosts install-k8s.yml
 ```
 
-5. Create master node and Calico network.
+5. Create master node and Calico network. 
 ```
-ansible-playbook -i hosts master.yml
+ansible-playbook --ask-become-pass  -i hosts master.yml #type ansible host password
 ```
 
 6. Join Worker Nodes to Kubernetes Cluster.
