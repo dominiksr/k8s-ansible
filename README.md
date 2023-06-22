@@ -25,13 +25,13 @@ ansible-playbook --ask-become-pass -i hosts users.yml
 ```
 ansible-playbook -i hosts install-k8s.yml
 ```
-5. dd
 
-6. Create master node and Calico network.
+5. Create master node and Calico network.
 ```
 ansible-playbook -i hosts master.yml
 ```
-7. Join Worker Nodes to Kubernetes Cluster.
+
+6. Join Worker Nodes to Kubernetes Cluster.
 ```
 ansible-playbook -i hosts join-workers.yml
 ```
