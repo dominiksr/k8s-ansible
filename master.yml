@@ -43,14 +43,14 @@
     - name: install Pod network
       become: yes
       become_user: ubuntu
-      shell: kubectl apply -f tigera-operator.yaml
+      shell: kubectl create -f tigera-operator.yaml
       args:
         chdir: $HOME
 
     - name: install Pod network custom
       become: yes
       become_user: ubuntu
-      shell: kubectl apply -f custom-resources.yaml
+      shell: kubectl create -f custom-resources.yaml
       args:
         chdir: $HOME
 
